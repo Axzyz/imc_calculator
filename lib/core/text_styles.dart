@@ -5,4 +5,10 @@ class TextStyles {
     color: Colors.white,
     fontSize: 18.0,
   );
+
+  static const TextStyle componentText = TextStyle(
+    color: Colors.white,
+    fontSize: 38.0,
+    fontWeight: FontWeight.bold
+  );
 }
