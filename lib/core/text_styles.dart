@@ -11,4 +11,10 @@ class TextStyles {
     fontSize: 38.0,
     fontWeight: FontWeight.bold
   );
+
+  static const TextStyle bigText = TextStyle(
+    color: Colors.white,
+    fontSize: 86.0,
+    fontWeight: FontWeight.bold
+  );
 }
