@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:imc_calculator/components/gender_selector.dart';
 import 'package:imc_calculator/components/height_selector.dart';
 import 'package:imc_calculator/components/number_selector.dart';
+import 'package:imc_calculator/core/app_colors.dart';
+import 'package:imc_calculator/core/text_styles.dart';
 
 class ImcHomeScreen extends StatefulWidget {
   const ImcHomeScreen({super.key});
@@ -11,15 +13,23 @@ class ImcHomeScreen extends StatefulWidget {
 }
 
 class _ImcHomeScreenState extends State<ImcHomeScreen> {
-  int selectedAge = 18;
+  double selectedHeight = 170;
   int selectedWeight = 80;
+  int selectedAge = 18;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GenderSelector(),
-        HeightSelector(),
+        HeightSelector(
+          height: selectedHeight,
+          onChanged: (newHeight) {
+            setState(() {
+              selectedHeight = newHeight;
+            });
+          },
+        ),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
@@ -62,6 +72,31 @@ class _ImcHomeScreenState extends State<ImcHomeScreen> {
                 },
               ),
             ],
+          ),
+        ),
+        Spacer(),
+        Padding(
+          padding: const EdgeInsets.only(
+            left: 16.0,
+            top: 16.0,
+            right: 16.0,
+            bottom: 32.0,
+          ),
+          child: SizedBox(
+            height: 60.0,
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                shape: WidgetStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                  ),
+                ),
+                backgroundColor: WidgetStateProperty.all(AppColors.primary),
+              ),
+              child: Text('Calcular', style: TextStyles.bodyText),
+            ),
           ),
         ),
       ],

@@ -8,7 +8,13 @@ class NumberSelector extends StatefulWidget {
   final Function() onDecrement;
   final Function() onIncrement;
 
-  const NumberSelector({super.key, required this.title, required this.value, required this.onDecrement, required this.onIncrement});
+  const NumberSelector({
+    super.key,
+    required this.title,
+    required this.value,
+    required this.onDecrement,
+    required this.onIncrement,
+  });
 
   @override
   State<NumberSelector> createState() => _NumberSelectorState();
