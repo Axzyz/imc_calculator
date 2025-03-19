@@ -3,6 +3,7 @@ import 'package:imc_calculator/components/gender_selector.dart';
 import 'package:imc_calculator/components/height_selector.dart';
 import 'package:imc_calculator/components/number_selector.dart';
 import 'package:imc_calculator/core/app_colors.dart';
+import 'package:imc_calculator/core/button_styles.dart';
 import 'package:imc_calculator/core/text_styles.dart';
 import 'package:imc_calculator/screens/imc_result_screen.dart';
 
@@ -99,14 +100,7 @@ class _ImcHomeScreenState extends State<ImcHomeScreen> {
                   ),
                 );
               },
-              style: ButtonStyle(
-                shape: WidgetStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.0),
-                  ),
-                ),
-                backgroundColor: WidgetStateProperty.all(AppColors.primary),
-              ),
+              style: ButtonStyles.btnStyle,
               child: Text('Calcular', style: TextStyles.bodyText),
             ),
           ),
