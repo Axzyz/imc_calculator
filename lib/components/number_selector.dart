@@ -40,6 +40,7 @@ class _NumberSelectorState extends State<NumberSelector> {
               spacing: 16.0,
               children: [
                 FloatingActionButton(
+                  heroTag: null,
                   shape: CircleBorder(),
                   onPressed: () {
                     widget.onDecrement();
@@ -49,6 +50,7 @@ class _NumberSelectorState extends State<NumberSelector> {
                   child: Icon(Icons.remove),
                 ),
                 FloatingActionButton(
+                  heroTag: null,
                   shape: CircleBorder(),
                   onPressed: () {
                     widget.onIncrement();
